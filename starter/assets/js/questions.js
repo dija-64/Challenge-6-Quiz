@@ -29,3 +29,35 @@ const questions = [
     },
 ];
 
+let questionIndex = 0;
+let score = 0;
+let timer;
+const timeLimitInSecs = 60;
+let timeLeft = timeLimitInSecs;
+
+
+const startButton = document.getElementById("start");
+const nextButton = document.getElementById("next-button");
+
+const questionTitle = document.getElementById("question-title")
+const questionsElement = document.getElementById("questions")
+
+startButton.addEventListener("click", startQuiz);
+nextButton.addEventListener("click", nextQuestion);
+
+function startQuiz() {
+    showQuestion();
+    timer = setInterval(updateTimer, 1000);
+}
+
+function showQuestion() {
+    const currentQuestion = questions[questionIndex];
+    questionsElement.textContext = currentQuestion.question;
+
+    optionsElement.innerHTML = "";
+    currentQuestion.options.forEach((option, index) => {
+        optionsElement.innerHTML += `
+        <button onclick="checkAnswer('${option}')">${option}</button>
+      `;
+    });
+}
