@@ -10,7 +10,7 @@ To begin, press start quiz. You will be presented with 5 multiple choice questio
 
 # Credits
 © 2024 edX Boot Camps LLC 
-OpenAi & ChatGPT for help with code debugging
+ChatGPT for help with code debugging
 
 # License
 Please refer to the LICENSE.txt - MIT LICENSE
