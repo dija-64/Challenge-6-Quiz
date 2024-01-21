@@ -3,7 +3,7 @@ A repository for the Module 6 Challenge - using JavaScript code to create an int
 
 # Installation
 
-GitHub Pages:
+GitHub Pages: https://dija-64.github.io/Challenge-6-Quiz/
 
 # Usage
 To begin, press start quiz. You will be presented with 5 multiple choice questions which need to be answered. Your score and initials are saved at the end and can be viewed by clicking 'View Highscores'.
