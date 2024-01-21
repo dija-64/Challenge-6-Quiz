@@ -75,21 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTimer() {
         if (timeLeft > 0) {
             timeLeft--;
+            document.getElementById("time").textContent = timeLeft;
         } else {
             endQuiz();
         }
     }
 
-    function nextQuestion() {
-        messageElement.textContent = "";
-        if (questionIndex < questions.length - 1) {
-            questionIndex++;
-            showQuestion();
-        } else {
-            endQuiz();
-
-        }
-    }
 
     function scoreRecord() {
         if (initialsElement.value && initialsElement.value.length <= 3) {
