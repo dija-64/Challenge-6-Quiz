@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const startButton = document.getElementById("start-button");
-    const nextButton = document.getElementById("next-button");
     const messageElement = document.getElementById("message");
     const questionContainer = document.getElementById("questions");
     const questionTitle = document.getElementById("question-title");
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     startButton.addEventListener("click", startQuiz);
-    nextButton.addEventListener("click", nextQuestion);
 
     const endScreen = document.getElementById("end-screen");
     const finalScore = document.getElementById("final-score");
@@ -39,15 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         questionsElement.innerHTML = "";
         currentQuestion.options.forEach((option, index) => {
-            questionsElement.innerHTML += `
-        <button onclick="checkAnswer('${option}')">${option}</button>
-      `;
+            const answerButton = document.createElement("button");
+            answerButton.textContent = option;
+            answerButton.addEventListener("click", function () {
+                checkAnswer(option);
+            });
+
+            questionsElement.appendChild(answerButton);
         });
     }
 
     function checkAnswer(selectedOption) {
         const currentQuestion = questions[questionIndex];
-
         if (selectedOption === currentQuestion.correctAnswer) {
 
             score++;
