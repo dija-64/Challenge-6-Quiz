@@ -74,10 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
         restartButton.style.display = "block";
     }
 
-    restartButton.addEventListener("click", function () {
-        location.reload();
-    });
-
     function updateTimer() {
         if (timeLeft > 0) {
             timeLeft--;
@@ -89,8 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function scoreRecord() {
-        if (initialsElement.value && initialsElement.value.length <= 3) {
-            alert("Your score of " + score + " has been saved, " + initialsElement.value);
+        const initials = initialsElement.value;
+        if (initials && initials.length <= 3) {
+            alert("Your score of " + score + " has been saved, " + initials);
+            const newScore = { initials: initials, score: score };
+            savedScores.push(newScore);
+            localStorage.setItem("scores", JSON.stringify(savedScores));
             resetQuiz();
         } else {
             alert("Enter your initials");
