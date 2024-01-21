@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalScore = document.getElementById("final-score");
     const initialsElement = document.getElementById("initials");
     const submitButton = document.getElementById("submit");
+    const restartButton = document.getElementById("restart-button");
 
     submitButton.addEventListener("click", scoreRecord);
 
@@ -70,7 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(timer);
         finalScore.textContent = score;
         endScreen.style.display = "block";
+        restartButton.style.display = "block";
     }
+
+    restartButton.addEventListener("click", function () {
+        location.reload();
+    });
 
     function updateTimer() {
         if (timeLeft > 0) {
