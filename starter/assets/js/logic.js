@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function checkAnswer(selectedOption) {
-        const currentQuestion = questions[currentQuestionIndex];
+        const currentQuestion = questions[questionIndex];
 
         if (selectedOption === currentQuestion.correctAnswer) {
 
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
             timeLeft -= 10;
             messageElement.textContent = "Incorrect!";
         }
-        if (currentQuestion < questions.length - 1) {
-            currentQuestion++;
+        if (questionIndex < questions.length - 1) {
+            questionIndex++;
             showQuestion();
         } else {
             endQuiz();
@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function nextQuestion() {
         messageElement.textContent = "";
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
+        if (questionIndex < questions.length - 1) {
+            questionIndex++;
             showQuestion();
         } else {
             endQuiz();
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function resetQuiz() {
-        currentQuestionIndex = 0;
+        currentQuestion = 0;
         score = 0;
         timeLeft = timeLimitInSecs;
         initialsElement.value = "";

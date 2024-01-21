@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "What is the name of the possessed girl in the film 'The Exorcest'?",
+        question: "What is the name of the possessed girl in the film 'The Exorcist'?",
         options: ["Jessica", "Regan", "Maya", "Yasmina"],
         correctAnswer: "Regan"
     },
@@ -17,7 +17,7 @@ const questions = [
     },
 
     {
-        question: "Which film features a haunted hotel with the room number 237 and a character named JAck Torrance?",
+        question: "Which film features a haunted hotel with the room number 237 and a character named Jack Torrance?",
         options: ["The Omen", "Paranormal Activity", "Sinister", "The Shining"],
         correctAnswer: "Michael Myers"
     },
